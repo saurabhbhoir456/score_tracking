@@ -41,7 +41,11 @@
                             <td class="px-6 py-4 text-sm text-gray-700">{{ $loop->iteration }}</td>
                             <td class="px-6 py-4 text-sm text-gray-700">{{ $game->team_a_name }}</td>
                             <td class="px-6 py-4 text-sm text-gray-700">{{ $game->team_b_name }}</td>
-                            <td class="px-6 py-4 text-sm text-gray-700">{{ $game->team_a_score }} - {{ $game->team_b_score }}</td>
+                            <td class="px-6 py-4 text-sm text-gray-700">
+                                <a href="{{ route('games.editScore', $game) }}" class="text-blue-600 hover:underline">
+                                    {{ $game->team_a_score }} - {{ $game->team_b_score }}
+                                </a>
+                            </td>
                             <td class="px-6 py-4 text-sm text-gray-700">{{ $game->match_date ? $game->match_date->format('d M Y') : '-' }}</td>
                             <td class="px-6 py-4 text-sm text-gray-700">
                                 <a href="{{ route('games.edit', $game) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md shadow-sm hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">Edit</a>
